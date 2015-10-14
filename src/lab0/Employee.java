@@ -102,7 +102,7 @@ public class Employee {
      * @param hireDate - may not be null or before current date
      * @throws IllegalArgumentException is hireDate == null || hireDate == currentDate
      */
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(Date hireDate) throws IllegalArgumentException {
         Date currentDate = new Date();
         if(hireDate == null || hireDate == currentDate){
             throw new IllegalArgumentException("Hire Date cannot be null or the current date");
@@ -119,7 +119,9 @@ public class Employee {
      * @param lastName- may not be null or empty
      */
     public void setLastName(String lastName) {
-        
+        if(lastName == null || lastName.isEmpty()){
+           throw new IllegalArgumentException("Last Name cannot be null");
+       }
         this.lastName = lastName;
     }
 
@@ -135,11 +137,11 @@ public class Employee {
      * @param ssn
      */
         public void setSsn(String ssn) {
-//        if(ssn == null){
-//            throw new IllegalArgumentException();
-//        }
-//        //if length is equal to nine or 11 (no dashes or dashes)
-//        if(ssn.length() == 9 || ssn.length() == 11){
+        if(ssn == null){
+            throw new IllegalArgumentException();
+        }
+        //if length is equal to nine or 11 (no dashes or dashes)
+        if(ssn.length() == 9 || ssn.length() == 11){
 //            //split on dashes
 //            String[] parts = ssn.split("-");
 //            //if length of parts is 0 then split characters into array
@@ -149,7 +151,7 @@ public class Employee {
 //            }else if (parts.length == 3){
 //                char[] partChars = null;
 //                //loop through the parts
-//                for(int s = 0; s< parts.length;s++){
+//                for(int s = 0; s< parts.length -1;s++){
 //                    //for each part put the characters into array c
 //                    char[] c = parts[s].toCharArray();
 //                    for(int x = 0; x<c.length;x++){
@@ -161,17 +163,13 @@ public class Employee {
 //                    System.out.println(partChars[c]);
 //                }
 //            }
-//            
-//        }else{
-//            throw new IllegalArgumentException();
-//        }
-//        
+            
+        }else{
+            throw new IllegalArgumentException();
+        }
+        
         this.ssn = ssn;
     }
     
-    public static void main(String[] args) {
-        Employee em = new Employee();
-        em.setSsn("333-33-3333");
-    }
     
 }
