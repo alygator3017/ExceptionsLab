@@ -34,7 +34,10 @@ public class Challenge1 {
      * @param fullName - may not be null or empty, may not be more than 5 names
      * (?) must have a first name and a last name cannot prevent someone from
      * putting their name in backwards.
-     * @return nameParts but because it is an array, you -1
+     * @return either 
+     * nameParts -1 because it is an array
+     * or
+     * nameParts - 2 if it has a suffix
      */
     public String extractLastName(String fullName) throws IllegalArgumentException {
         if (fullName == null || fullName.isEmpty()) {
