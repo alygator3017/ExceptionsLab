@@ -100,10 +100,13 @@ public class Employee {
     /**
      *Sets required hire date
      * @param hireDate - may not be null or before current date
-     * @throws IllegalArgumentException is hireDate 
+     * @throws IllegalArgumentException is hireDate == null || hireDate == currentDate
      */
     public void setHireDate(Date hireDate) {
-        if(hireDate == null || hireDate == )
+        Date currentDate = new Date();
+        if(hireDate == null || hireDate == currentDate){
+            throw new IllegalArgumentException("Hire Date cannot be null or the current date");
+        }
         this.hireDate = hireDate;
     }
 
@@ -111,6 +114,10 @@ public class Employee {
         return lastName;
     }
 
+    /**
+     *sets the required lastName
+     * @param lastName- may not be null or empty
+     */
     public void setLastName(String lastName) {
         
         this.lastName = lastName;
