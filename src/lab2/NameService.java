@@ -25,18 +25,18 @@ public class NameService {
         }
         String[] nameParts = fullName.split(" ");
         String lastPart = nameParts[LAST_NAME_IDX];
-        if (nameParts.length > 2 || nameParts.length <= 1) {
-            throw new IllegalArgumentException("Must have at least a first and a last name and no more than 2 names");
-
-            //could be more options for suffix's
-        } else if (lastPart.contains("jr.") || lastPart.contains("jr") || lastPart.contains("sr")
-                || lastPart.contains("sr.") || lastPart.contains("ii") || lastPart.contains("iii") || lastPart.contains("iv")
-                || lastPart.contains("ph.d.") || lastPart.contains("ph.d") || lastPart.contains("phd") || lastPart.contains("md")
-                || lastPart.contains("m.d.")) {
-            throw new IllegalArgumentException("Please do not add suffix to last name, please try again ");
-        } else {
+//        if (nameParts.length > 2 || nameParts.length <= 1) {
+//            throw new IllegalArgumentException("Must have at least a first and a last name and no more than 2 names");
+//
+//            //could be more options for suffix's
+//        } else if (lastPart.contains("jr.") || lastPart.contains("jr") || lastPart.contains("sr")
+//                || lastPart.contains("sr.") || lastPart.contains("ii") || lastPart.contains("iii") || lastPart.contains("iv")
+//                || lastPart.contains("ph.d.") || lastPart.contains("ph.d") || lastPart.contains("phd") || lastPart.contains("md")
+//                || lastPart.contains("m.d.")) {
+//            throw new IllegalArgumentException("Please do not add suffix to last name, please try again ");
+//        } else {
             return nameParts[LAST_NAME_IDX];
-        }
+//        }
     }
 
     /**
